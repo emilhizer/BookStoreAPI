@@ -81,7 +81,7 @@ namespace BookStore_API {
 
       app.UseHttpsRedirection();
 
-      // See Policy setting above2
+      // See Policy setting above
       app.UseCors("CorsPolicy");
 
       app.UseRouting();
