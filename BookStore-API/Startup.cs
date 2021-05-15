@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore.SqlServer; // access the db
+//using Microsoft.EntityFrameworkCore.Design; // update, change db
 using BookStore_API.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,7 @@ using Microsoft.OpenApi.Models; // had to add manually to get OpenApiInfo to be 
 using System.IO; // added to support Path class below
 using BookStore_API.Contracts;
 using BookStore_API.Services;
+using BookStore_API.Mappings;
 
 namespace BookStore_API {
   public class Startup {
@@ -28,9 +31,12 @@ namespace BookStore_API {
 
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services) {
-      services.AddDbContext<ApplicationDbContext>(options =>
-          options.UseSqlite(
-              Configuration.GetConnectionString("DefaultConnection")));
+      services.AddDbContextPool<ApplicationDbContext>(options => // note expert says to use addDbContextPool vs addDbContext
+        //options.UseSqlite(
+        //  Configuration.GetConnectionString("DefaultConnection")));
+        options.UseSqlServer(
+          Configuration.GetConnectionString("AzureSQLConnection")));
+
       services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
           .AddEntityFrameworkStores<ApplicationDbContext>();
 
@@ -41,6 +47,8 @@ namespace BookStore_API {
           .AllowAnyMethod()
           .AllowAnyHeader());
       });
+
+      services.AddAutoMapper(typeof(Maps));
 
       // Add swagger controls (via swashbuckler NuGet packages)
       services.AddSwaggerGen(c => { // lamda expression token => expression
