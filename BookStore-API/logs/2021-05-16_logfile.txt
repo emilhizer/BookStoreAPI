@@ -1,0 +1,22 @@
+2021-05-16 11:46:05.8315 INFO Attempted GET all authors
+2021-05-16 11:46:08.1403 INFO Successfully got all authors
+2021-05-16 11:49:36.9694 INFO Attempted GET all authors
+2021-05-16 11:50:08.4309 ERROR A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 35 - An internal exception was caught) - System.Net.Internals.SocketExceptionFactory+ExtendedSocketException (00000005, 0xFFFDFFFF): nodename nor servname provided, or not known
+   at System.Net.Dns.InternalGetHostByName(String hostName)
+   at System.Net.Dns.GetHostAddresses(String hostNameOrAddress)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle.Connect(String serverName, Int32 port, TimeSpan timeout, Boolean isInfiniteTimeout, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+   at Microsoft.Data.SqlClient.SNI.SNITCPHandle..ctor(String serverName, Int32 port, Int64 timerExpire, Boolean parallel, String cachedFQDN, SQLDNSInfo& pendingDNSInfo)
+2021-05-16 11:50:43.6453 INFO Attempted GET all authors
+2021-05-16 11:50:45.3402 INFO Successfully got all authors
+2021-05-16 21:13:34.0958 INFO Attempted GET of one author with Id: 1
+2021-05-16 21:13:36.0306 WARN No author found with Id: 1
+2021-05-16 21:53:05.1920 INFO Author Submittion Attempted
+2021-05-16 21:53:07.0248 INFO Author Created
+2021-05-16 21:54:23.0503 INFO Author Submittion Attempted
+2021-05-16 21:54:23.1575 INFO Author Created
+2021-05-16 21:56:01.4980 INFO Attempted GET all authors
+2021-05-16 21:56:01.7323 INFO Successfully got all authors
+2021-05-16 22:15:24.4227 INFO Attempted GET all authors
+2021-05-16 22:15:26.4759 INFO Successfully got all authors
+2021-05-16 22:15:58.2839 INFO Attempted GET one author with Id: 2
+2021-05-16 22:15:58.4777 INFO Successfully got author with Id: 2

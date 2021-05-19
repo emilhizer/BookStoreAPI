@@ -48,6 +48,7 @@ namespace BookStore_API {
           .AllowAnyHeader());
       });
 
+      // Great framework to link names in this project to the database names
       services.AddAutoMapper(typeof(Maps));
 
       // Add swagger controls (via swashbuckler NuGet packages)
@@ -63,6 +64,7 @@ namespace BookStore_API {
       });
 
       services.AddSingleton<ILoggerService, LoggerService>();
+      services.AddScoped<IAuthorRepository, AuthorRepository>();
 
       services.AddControllers(); // Add our main controllers after others (above) added
     }
@@ -72,7 +74,7 @@ namespace BookStore_API {
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
       if (env.IsDevelopment()) {
         app.UseDeveloperExceptionPage();
-        app.UseDatabaseErrorPage();
+        // app.UseDatabaseErrorPage(); // commented out due to ASP.NET Core 3.1 to 5.0 issue
       }
       else {
         app.UseExceptionHandler("/Error");

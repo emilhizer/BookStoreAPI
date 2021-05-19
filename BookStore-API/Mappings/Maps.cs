@@ -13,6 +13,8 @@ namespace BookStore_API.Mappings {
     // Use AutoMapper to link the main data class with the DTO class
     public Maps() {
       CreateMap<Author, AuthorDTO>().ReverseMap();
+      CreateMap<Author, AuthorCreateDTO>().ReverseMap();
+      CreateMap<Author, AuthorUpdateDTO>().ReverseMap();
       CreateMap<Book, BookDTO>().ReverseMap();
     }
 

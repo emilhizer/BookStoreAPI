@@ -1,0 +1,18 @@
+2021-05-18 19:57:36.0210 INFO Attempted GET all authors
+2021-05-18 19:57:37.9992 INFO Successfully got all authors
+2021-05-18 19:58:39.3361 INFO Author Update Attempted with Id: 2
+2021-05-18 19:58:39.6031 INFO Author Update Success with Id: 2
+2021-05-18 19:58:58.5761 INFO Attempted GET all authors
+2021-05-18 19:58:58.6315 INFO Successfully got all authors
+2021-05-18 20:16:42.6557 INFO Attempted GET one author with Id: 1
+2021-05-18 20:16:44.5666 INFO Successfully got author with Id: 1
+2021-05-18 20:16:49.2862 INFO Attempted GET one author with Id: 2
+2021-05-18 20:16:49.3494 INFO Successfully got author with Id: 2
+2021-05-18 20:17:00.7269 INFO Attempted GET all authors
+2021-05-18 20:17:00.7806 INFO Successfully got all authors
+2021-05-18 20:42:39.4174 INFO Author Update Attempted with Id: 3
+2021-05-18 20:42:41.1351 WARN Update Author Not Found with Id: 3
+2021-05-18 20:42:42.1390 ERROR Database operation expected to affect 1 row(s) but actually affected 0 row(s). Data may have been modified or deleted since entities were loaded. See http://go.microsoft.com/fwlink/?LinkId=527962 for information on understanding and handling optimistic concurrency exceptions. - 
+2021-05-18 20:45:21.7547 INFO Author Update Attempted with Id: 3
+2021-05-18 20:48:02.4726 INFO Author Update Attempted with Id: 3
+2021-05-18 20:48:33.4188 WARN Update Author Not Found with Id: 3
