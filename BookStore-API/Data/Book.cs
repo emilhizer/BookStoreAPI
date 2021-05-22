@@ -16,7 +16,8 @@ namespace BookStore_API.Data {
     public string Isbn { get; set; }
     public string Summary { get; set; }
     public string Image { get; set; }
-    public double? Price { get; set; }
+    //public double? Price { get; set; } // commented out due to weird decimal type error when reading from db
+    public decimal? Price { get; set; }
 
     public int? AuthorId { get; set; }
 

@@ -1,0 +1,27 @@
+2021-05-19 13:53:48.4015 INFO Books - GetBooks: Attempted GET all records
+2021-05-19 13:53:50.5341 INFO Books - GetBooks: Successfully got all records
+2021-05-19 15:24:08.7481 INFO Books - Create: Create attempted
+2021-05-19 15:24:10.6986 INFO Books - Create: Create success
+2021-05-19 15:25:52.2742 INFO Books - Create: Create attempted
+2021-05-19 15:25:53.3706 ERROR Books - Create: An error occurred while updating the entries. See the inner exception for details. - Microsoft.Data.SqlClient.SqlException (0x80131904): String or binary data would be truncated in table 'mySampleDatabase.dbo.Books', column 'Summary'. Truncated value: 'It portrays American and British expatriates who travel from Paris to the Festival of San Fermín in '.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__274_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:ce97768a-6edd-4150-ba42-d9ed46634a6d
+Error Number:2628,State:1,Class:16
+2021-05-19 15:27:14.3271 INFO Books - Create: Create attempted
+2021-05-19 15:27:14.4654 INFO Books - Create: Create success
+2021-05-19 15:28:03.2294 INFO Books - GetBooks: Attempted GET all records
+2021-05-19 15:28:03.8802 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2021-05-19 15:35:56.1532 INFO Books - GetBooks: Attempted GET all records
+2021-05-19 15:35:57.1867 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 
+2021-05-19 15:41:56.5632 INFO Books - GetBooks: Attempted GET all records
+2021-05-19 15:41:56.9565 ERROR Books - GetBooks: Unable to cast object of type 'System.Decimal' to type 'System.Double'. - 

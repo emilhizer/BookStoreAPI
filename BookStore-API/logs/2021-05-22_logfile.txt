@@ -1,0 +1,18 @@
+2021-05-22 11:00:45.1937 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:00:47.5663 INFO Books - GetBooks: Successfully got all records
+2021-05-22 11:01:54.6910 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:01:56.2399 INFO Books - GetBooks: Successfully got all records
+2021-05-22 11:08:57.6739 INFO Attempted GET all authors
+2021-05-22 11:08:59.4002 INFO Successfully got all authors
+2021-05-22 11:09:17.2852 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:09:17.3529 INFO Books - GetBooks: Successfully got all records
+2021-05-22 11:10:10.0695 INFO Books - Create: Create attempted
+2021-05-22 11:10:10.3466 INFO Books - Create: Create success
+2021-05-22 11:10:45.0984 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:10:45.1706 INFO Books - GetBooks: Successfully got all records
+2021-05-22 11:11:52.4288 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:11:52.5132 INFO Books - GetBooks: Successfully got all records
+2021-05-22 11:30:30.0399 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:30:31.8194 INFO Books - GetBooks: Successfully got all records
+2021-05-22 11:31:35.4541 INFO Books - GetBooks: Attempted GET all records
+2021-05-22 11:31:37.1453 INFO Books - GetBooks: Successfully got all records

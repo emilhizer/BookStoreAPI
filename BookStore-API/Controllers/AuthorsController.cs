@@ -57,7 +57,7 @@ namespace BookStore_API.Controllers {
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
-    // Using MVC, async returns lots of info inno IActionResult
+    // Using MVC, async returns lots of info into IActionResult
     public async Task<IActionResult> GetAuthors() {
       try {
         _logger.LogInfo("Attempted GET all authors");
@@ -92,7 +92,7 @@ namespace BookStore_API.Controllers {
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
 
-    // Using MVC, async returns lots of info inno IActionResult
+    // Get one author
     public async Task<IActionResult> GetAuthor(int id) {
       try {
         _logger.LogInfo($"Attempted GET one author with Id: {id}");
