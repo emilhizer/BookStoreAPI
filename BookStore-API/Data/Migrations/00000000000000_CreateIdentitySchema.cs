@@ -1,9 +1,13 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BookStore_API.Data.Migrations {
+
   public partial class CreateIdentitySchema : Migration {
+
     protected override void Up(MigrationBuilder migrationBuilder) {
+
       migrationBuilder.CreateTable(
           name: "AspNetRoles",
           columns: table => new {

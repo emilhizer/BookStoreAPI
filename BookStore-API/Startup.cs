@@ -20,6 +20,9 @@ using System.IO; // added to support Path class below
 using BookStore_API.Contracts;
 using BookStore_API.Services;
 using BookStore_API.Mappings;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace BookStore_API {
   public class Startup {
@@ -37,8 +40,9 @@ namespace BookStore_API {
         options.UseSqlServer(
           Configuration.GetConnectionString("AzureSQLConnection")));
 
-      services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-          .AddEntityFrameworkStores<ApplicationDbContext>();
+      services.AddDefaultIdentity<IdentityUser>() // include this in parenth's for MFA (options => options.SignIn.RequireConfirmedAccount = true)
+        .AddRoles<IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationDbContext>();
 
       // Enable external servers to access this API service
       services.AddCors(o => {
@@ -50,6 +54,20 @@ namespace BookStore_API {
 
       // Great framework to link names in this project to the database names
       services.AddAutoMapper(typeof(Maps));
+
+      // JWT: JSON Web Token
+      services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddJwtBearer(o => {
+          o.TokenValidationParameters = new TokenValidationParameters {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = Configuration["Jwt:Issuer"],
+            ValidAudience = Configuration["Jwt:Issuer"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+          };
+        });
 
       // Add swagger controls (via swashbuckler NuGet packages)
       services.AddSwaggerGen(c => { // lamda expression token => expression
@@ -72,7 +90,10 @@ namespace BookStore_API {
 
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+    public void Configure(IApplicationBuilder app,
+      IWebHostEnvironment env,
+      UserManager<IdentityUser> userManager,
+      RoleManager<IdentityRole> roleManager) {
       if (env.IsDevelopment()) {
         app.UseDeveloperExceptionPage();
         // app.UseDatabaseErrorPage(); // commented out due to ASP.NET Core 3.1 to 5.0 issue
@@ -94,6 +115,12 @@ namespace BookStore_API {
 
       // See Policy setting above
       app.UseCors("CorsPolicy");
+
+      // Seed an admin and two customers un/pw's for testing/debugging
+      SeedData.Seed(userManager, roleManager).Wait();
+      // Note: adding .Wait() to the end instead of "await" at the beginning
+      //  allows us to make this one function async without needing to reformat this
+      //  class as an async class
 
       app.UseRouting();
 

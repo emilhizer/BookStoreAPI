@@ -16,3 +16,15 @@
 2021-05-22 11:30:31.8194 INFO Books - GetBooks: Successfully got all records
 2021-05-22 11:31:35.4541 INFO Books - GetBooks: Attempted GET all records
 2021-05-22 11:31:37.1453 INFO Books - GetBooks: Successfully got all records
+2021-05-22 23:11:02.6748 INFO Users - Login: Login attempt from user: admin
+2021-05-22 23:11:02.9190 INFO Users - Login: admin Successfully authenticated
+2021-05-22 23:11:21.6401 INFO Users - Login: Login attempt from user: customer1
+2021-05-22 23:11:21.7310 INFO Users - Login: customer1 Successfully authenticated
+2021-05-22 23:11:29.5545 INFO Users - Login: Login attempt from user: customer1
+2021-05-22 23:11:29.6089 INFO Users - Login: customer1 Not authenticated
+2021-05-22 23:11:46.2753 INFO Users - Login: Login attempt from user: customer12
+2021-05-22 23:11:46.3378 INFO Users - Login: customer12 Not authenticated
+2021-05-22 23:11:55.7918 INFO Users - Login: Login attempt from user: customer2
+2021-05-22 23:11:55.8960 INFO Users - Login: customer2 Successfully authenticated
+2021-05-22 23:54:59.7131 INFO Users - Login: Login attempt from user: admin
+2021-05-22 23:54:59.9611 INFO Users - Login: admin Successfully authenticated

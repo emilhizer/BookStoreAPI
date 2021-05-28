@@ -8,7 +8,7 @@ using BookStore_API.Contracts;
 using AutoMapper;
 using BookStore_API.DTOs;
 using BookStore_API.Data;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStore_API.Controllers {
 
@@ -54,6 +54,7 @@ namespace BookStore_API.Controllers {
     /// </summary>
     /// <returns>List of Authors</returns>
     [HttpGet]
+    [AllowAnonymous]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
 
@@ -87,6 +88,7 @@ namespace BookStore_API.Controllers {
     /// <param name="id"></param>
     /// <returns>One Author</returns>
     [HttpGet("{id}")]
+    [Authorize] // Any authenticated user can access Author by Id
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -127,6 +129,7 @@ namespace BookStore_API.Controllers {
     /// <param name="author"></param>
     /// <returns></returns>
     [HttpPost]
+    [Authorize(Roles = "Administrator")] // Separate roles with commas inside of quotes
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -168,6 +171,7 @@ namespace BookStore_API.Controllers {
     /// <param name="author"></param>
     /// <returns></returns>
     [HttpPut("{id}")] // Put is the "post" version of update
+    [Authorize(Roles = "Administrator, Customer")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -214,6 +218,7 @@ namespace BookStore_API.Controllers {
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Customer")] // Yes, it's weird that only Customer can delete - just testing
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

@@ -1,0 +1,14 @@
+2021-05-25 21:39:27.3944 INFO Attempted GET all authors
+2021-05-25 21:39:27.5143 INFO Successfully got all authors
+2021-05-25 21:40:20.0458 INFO Attempted GET one author with Id: 1
+2021-05-25 21:40:20.1049 INFO Successfully got author with Id: 1
+2021-05-25 21:49:52.3868 INFO Users - Login: Login attempt from user: customer1
+2021-05-25 21:49:53.1167 INFO Users - Login: customer1 Successfully authenticated
+2021-05-25 21:51:34.2441 INFO Users - Login: Login attempt from user: admin
+2021-05-25 21:51:34.3423 INFO Users - Login: admin Successfully authenticated
+2021-05-25 22:01:48.7978 INFO Users - Login: Login attempt from user: admin
+2021-05-25 22:01:49.1524 INFO Users - Login: admin Successfully authenticated
+2021-05-25 22:02:08.9640 INFO Author Submittion Attempted
+2021-05-25 22:02:09.2418 INFO Author Created
+2021-05-25 22:02:23.1880 INFO Attempted GET all authors
+2021-05-25 22:02:23.2496 INFO Successfully got all authors
